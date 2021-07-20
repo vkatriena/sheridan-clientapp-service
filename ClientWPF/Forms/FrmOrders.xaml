@@ -1,0 +1,72 @@
+﻿<Window x:Class="ClientWPF.Forms.FrmOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientWPF.Forms"
+        mc:Ignorable="d"
+        Title="FrmOrders" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="20,22,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  Grid.Row="0" Grid.Column="0">
+                <Button x:Name="btnInsert" Height="35" Width="80" FontSize="18" Content="Insert" Margin="5,40,5,5" Background="#FFDFD4D4"></Button>
+                <Button x:Name="btnUpdate" Height="35" Width="80" FontSize="18" Content="Update" Margin="5" Background="#FFDFD4D4"></Button>
+                <Button x:Name="btnDelete" Height="35" Width="80" FontSize="18" Content="Delete" Margin="5" Background="#FFDFD4D4"></Button>
+                <Button x:Name="btnClear" Height="35" Width="80" FontSize="18" Content="Clear" Margin="5" Background="#FFDFD4D4"></Button>
+
+            </StackPanel>
+            <Grid Grid.Column="1" HorizontalAlignment="Left" Width="446" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Right" Width="178">
+                    <Label x:Name="lblId" Content="Order Id:" FontSize="16" Margin="1" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lbCustomerId" Content="Customer Id:" FontSize="16" Margin="6" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lblOrderDate" Content="Ordered Date:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lblFilleDate" Content="Filled Date:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lblStatus" Content="Status:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lblAmount" Content="Amount:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox x:Name="tbId" FontSize="16" Margin="10" Background="#FFDFD4D4"></TextBox>
+                    <TextBox x:Name="tbCustomerId" FontSize="16" Margin="8" Background="#FFDFD4D4" ></TextBox>
+                    <TextBox x:Name="tbOrderDate" FontSize="16" Margin="8" Background="#FFDFD4D4"></TextBox>
+                    <TextBox x:Name="tbFilledDate" FontSize="16" Margin="8" Background="#FFDFD4D4"></TextBox>
+                    <TextBox x:Name="tbStatus" FontSize="16" Margin="8" Background="#FFDFD4D4" ></TextBox>
+                    <TextBox x:Name="tbAmount" FontSize="16" Margin="8" Background="#FFDFD4D4"></TextBox>
+
+                </StackPanel>
+
+            </Grid>
+            <Label  Grid.Row="1" Grid.Column="1" Content="Orders:"></Label>
+            <ListBox x:Name="lstOrders" Grid.Row="1" Grid.Column="1" Margin="10,30,0,0" ItemsSource="{Binding}" FontFamily="Lucida Sans Typewriter" FontSize="12" Background="#FFF1E5EC">
+                <ListBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFEAC1C1" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.BorderBrush>
+            </ListBox>
+            <Label  Grid.Row="1" Grid.Column="0" Content="Customers:"></Label>
+            <ListBox x:Name="lstCustomer" Grid.Row="1" Grid.Column="0" Margin="0,30,15,0" ItemsSource="{Binding}" FontFamily="Lucida Sans Typewriter" FontSize="12"  Background="#FFF1E5EC" >
+                <ListBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFBABA" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.BorderBrush>
+            </ListBox>
+
+        </Grid>
+    </Grid>
+</Window>

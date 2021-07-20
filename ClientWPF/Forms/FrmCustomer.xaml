@@ -1,0 +1,55 @@
+﻿<Window x:Class="ClientWPF.Forms.FrmCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientWPF.Forms"
+        mc:Ignorable="d"
+        Title="FrmCustomer" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="20,50,20,20" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="38*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="-5,65,5,41" Grid.RowSpan="2">
+                <Button x:Name="btnInsert" Height="45" Width="90" FontSize="18" Content="Insert" Margin="5" Background="#FFC5DFE2" Click="btnInsert_Click"></Button>
+                <Button x:Name="btnUpdate" Height="45" Width="90" FontSize="18" Content="Update" Margin="5" Background="#FFC5DFE2"></Button>
+                <Button x:Name="btnDelete" Height="45" Width="90" FontSize="18" Content="Delete" Margin="5" Background="#FFC5DFE2"></Button>
+                <Button x:Name="btnClear" Height="45" Width="90" FontSize="18" Content="Clear" Margin="10" Background="#FFC5DFE2"></Button>
+
+            </StackPanel>
+            <Grid Grid.Column="1" HorizontalAlignment="Left" Width="446" Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Center" Width="178">
+                    <Label x:Name="lblId" Content="Customer ID:" Margin="5,0,0,0" FontFamily="Segoe UI" FontSize="14" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="lblName" Content="Name:" FontSize="16" Margin="5,15,5,5" HorizontalAlignment="Center" Padding="5,0,5,5"></Label>
+                    <Label x:Name="lblOrders" Content="YTD Orders:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+                    <Label x:Name="lblSales" Content="YTD Sales:" FontSize="16" Margin="5" HorizontalAlignment="Center"></Label>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox x:Name="tbName" FontSize="16" Margin="10,45,10,10" Background="#FFDCEAE9"></TextBox>
+                    <TextBox x:Name="tbOrders" FontSize="16" Margin="8" Background="#FFDCEAE9"></TextBox>
+                    <TextBox x:Name="tbSales" FontSize="16" Margin="8" Background="#FFDCEAE9"></TextBox>
+                </StackPanel>
+
+            </Grid>
+            <Label Grid.Column="1" Content="Customers:" Margin="0,202,0,0" Grid.RowSpan="2"/>
+            <ListBox x:Name="lstCustomer" Grid.Row="1" Grid.Column="1" Margin="0,21,0,0" ItemsSource="{Binding}" FontFamily="Lucida Sans Typewriter" FontSize="12" Background="#FFDCEAE9" >
+                <ListBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF71E7CB" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.BorderBrush>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>
